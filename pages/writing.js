@@ -1,42 +1,20 @@
 import React from "react";
 import Head from "next/head";
-import Link from "next/link";
 import Nav from "../components/nav";
 
 const Home = () => (
   <div>
     <Head>
-      <title>Home</title>
+      <title>Writing</title>
       <link rel="icon" href="/favicon.ico" />
     </Head>
 
     <Nav />
 
     <div className="hero">
-      <h1 className="title">Welcome to Tim's Internet Home</h1>
-      <p className="description">I hope you have a good timne</p>
-      <div className="row">
-        <Link href="/about">
-          <a className="card">
-            <h3>About</h3>
-            <p>Some info about me</p>
-          </a>
-        </Link>
-        <Link href="/contact">
-          <a className="card">
-            <h3>Contact</h3>
-            <p>Get in contact with me</p>
-          </a>
-        </Link>
-        <Link href="/writing">
-          <a className="card">
-            <h3>Writing</h3>
-            <p>Do I have anything interesting to say? Probably not.</p>
-          </a>
-        </Link>
-      </div>
+      <h1 className="title">Writing</h1>
+      <p className="description">TBD</p>
     </div>
-
     <style jsx>{`
       .hero {
         width: 100%;
