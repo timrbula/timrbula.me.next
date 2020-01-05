@@ -14,7 +14,7 @@ const Home = () => (
 
     <div className="hero">
       <h1 className="title">Welcome to Tim's Internet Home</h1>
-      <p className="description">I hope you have a good timne</p>
+      <p className="description">I wish you the best</p>
       <div className="row">
         <Link href="/about">
           <a className="card">
