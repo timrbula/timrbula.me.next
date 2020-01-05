@@ -1,8 +1,8 @@
 import React from "react";
-import Head from "next/head";
 import matter from "gray-matter";
-import Nav from "../components/nav";
-import BlogList from "../components/BlogList";
+import Head from "next/head";
+import Nav from "../../components/nav";
+import BlogList from "../../components/BlogList";
 
 const Writing = ({ allBlogs }) => (
   <div>
@@ -94,7 +94,7 @@ Writing.getInitialProps = async function() {
     });
     // return all the posts
     return data;
-  })(require.context("../posts", true, /\.md$/));
+  })(require.context("../../posts", true, /\.md$/));
 
   return {
     allBlogs: posts

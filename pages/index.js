@@ -28,7 +28,7 @@ const Home = () => (
             <p>Get in contact with me</p>
           </a>
         </Link>
-        <Link href="/writing">
+        <Link href="/blog">
           <a className="card">
             <h3>Writing</h3>
             <p>Do I have anything interesting to say? Probably not.</p>
