@@ -13,7 +13,20 @@ const Home = () => (
 
     <div className="hero">
       <h1 className="title">Contact Me!</h1>
-      <p className="description">I will respond at some point</p>
+      <p className="description">Hi</p>
+      <div className="row">
+        <a className="card" href="mailto:timrbula@gmail.com">
+          <h3>timrbula at gmail dot com</h3>
+          <p>Get in contact with me</p>
+        </a>
+        <a className="card" href="https://github.com/timrbula">
+          <h3>GitHub</h3>
+        </a>
+        <a className="card" href="https://twitter.com/timrbula">
+          <h3>Twitter</h3>
+          <p>Do I have anything interesting to say? No.</p>
+        </a>
+      </div>
     </div>
     <style jsx>{`
       .hero {

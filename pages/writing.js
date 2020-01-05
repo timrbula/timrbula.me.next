@@ -1,8 +1,10 @@
 import React from "react";
 import Head from "next/head";
+import matter from "gray-matter";
 import Nav from "../components/nav";
+import BlogList from "../components/BlogList";
 
-const Home = () => (
+const Writing = ({ allBlogs }) => (
   <div>
     <Head>
       <title>Writing</title>
@@ -14,6 +16,7 @@ const Home = () => (
     <div className="hero">
       <h1 className="title">Writing</h1>
       <p className="description">TBD</p>
+      <BlogList allBlogs={allBlogs} />
     </div>
     <style jsx>{`
       .hero {
@@ -64,4 +67,38 @@ const Home = () => (
   </div>
 );
 
-export default Home;
+Writing.getInitialProps = async function() {
+  // get all .md files from the src/posts dir
+  const posts = (context => {
+    // grab all the files matching this context
+    const keys = context.keys();
+    // grab the values from these files
+    const values = keys.map(context);
+    // go through each file
+    const data = keys.map((key, index) => {
+      // Create slug from filename
+      const slug = key
+        .replace(/^.*[\\\/]/, "")
+        .split(".")
+        .slice(0, -1)
+        .join(".");
+      // get the current file value
+      const value = values[index];
+      // Parse frontmatter & markdownbody for the current file
+      const document = matter(value.default);
+      // return the .md content & pretty slug
+      return {
+        document,
+        slug
+      };
+    });
+    // return all the posts
+    return data;
+  })(require.context("../posts", true, /\.md$/));
+
+  return {
+    allBlogs: posts
+  };
+};
+
+export default Writing;

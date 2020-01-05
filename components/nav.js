@@ -14,15 +14,16 @@ const Nav = () => (
           <a>Home</a>
         </Link>
       </li>
-      {links.map(({ key, href, label }) => (
+      {/* {links.map(({ key, href, label }) => (
         <li key={key}>
           <a href={href}>{label}</a>
         </li>
-      ))}
+      ))} */}
     </ul>
 
     <style jsx>{`
       :global(body) {
+        color: #333;
         margin: 0;
         font-family: -apple-system, BlinkMacSystemFont, Avenir Next, Avenir, Helvetica, sans-serif;
       }
